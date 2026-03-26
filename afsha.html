@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Afsha's Diary</title>
+
+<style>
+body {
+background-color: #E6D6FF;
+font-family: Arial, sans-serif;
+text-align: center;
+}
+
+h1 {
+color: #7B3FA1;
+}
+
+textarea {
+width: 80%;
+height: 200px;
+padding: 10px;
+border-radius: 10px;
+border: 2px solid #7B3FA1;
+}
+
+button {
+background-color: #C8A2C8;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
+font-size: 16px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #7B3FA1;
+}
+
+.entry {
+background-color: white;
+margin: 20px;
+padding: 10px;
+border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Afsha's Lilac Diary 💜</h1>
+
+<p>Write your memories of the day</p>
+
+<textarea id="diaryEntry" placeholder="Dear Diary..."></textarea>
+<br><br>
+
+<button onclick="saveEntry()">Save Memory</button>
+
+<div id="entries"></div>
+
+<script>
+function saveEntry() {
+var entry = document.getElementById("diaryEntry").value;
+
+if(entry == "") {
+alert("Write something first!");
+return;
+}
+
+var newEntry = document.createElement("div");
+newEntry.className = "entry";
+newEntry.innerHTML = entry;
+
+document.getElementById("entries").appendChild(newEntry);
+
+document.getElementById("diaryEntry").value = "";
+}
+</script>
+
+</body>
+</html>
